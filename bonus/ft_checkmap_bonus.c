@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 03:11:07 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/11 21:39:22 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/01/12 02:01:40 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,8 @@ int	ft_check_inside(char **line, t_cont *more)
 	{
 		if ((*line)[0] != '1' || ((*line)[i] != '1' && (*line)[i + 1] == '\n')
 			|| ((*line)[i] != '1' && (*line)[i] != '0'
-				&& (*line)[i] != 'C' && (*line)[i] != 'P' && (*line)[i] != 'E'))
+				&& (*line)[i] != 'C' && (*line)[i] != 'P' && (*line)[i] != 'E'
+				&& (*line)[i] != 'N'))
 		{
 			ft_putstr("invalid map");
 			free(*line);

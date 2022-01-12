@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 03:07:36 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/11 20:42:18 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/01/12 02:03:59 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	ft_fillmap2(t_map *map, t_srcs *srcs, int x, int y)
 		mlx_put_image_to_window(map->mlx, map->win, srcs->exit, x, y);
 	else if (map->map[map->i][map->j] == '0')
 		mlx_put_image_to_window(map->mlx, map->win, srcs->land, x, y);
+	else if (map->map[map->i][map->j] == 'N')
+		mlx_put_image_to_window(map->mlx, map->win, srcs->enemy, x, y);
 }
 
 void	ft_fillmap(t_srcs *srcs, t_map *map)

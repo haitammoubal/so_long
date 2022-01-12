@@ -6,13 +6,13 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 20:54:31 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/11 21:58:31 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/01/12 01:53:44 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-static int	calc_size(long int n)
+int	calc_size(long int n)
 {
 	int	i;
 
@@ -25,7 +25,7 @@ static int	calc_size(long int n)
 	return (i);
 }
 
-static char	*sep_num(char *str,	int n,	int size)
+char	*sep_num(char *str,	int n,	int size)
 {
 	int	i;
 	int	a;

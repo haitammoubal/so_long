@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 23:00:03 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/11 21:59:03 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/01/12 02:14:55 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ typedef struct s_srcs
 	void	*coll;
 	void	*exit;
 	void	*land;
+	void	*enemy;
 	int		width;
 	int		height;
 }t_srcs;
@@ -85,4 +86,8 @@ int		ft_check(int j, int fd, char **line, t_cont *more);
 char	*ft_itoa(int n);
 int		calc_size(long int n);
 char	*sep_num(char *str,	int n,	int size);
+void	ft_moveup_enemy(t_map *map, int *i, int *j);
+void	ft_moveright_enemy(t_map *map, int *i, int *j);
+void	ft_moveleft_enemy(t_map *map, int *i, int *j);
+void	ft_movedown_enemy(t_map *map, int *i, int *j);
 #endif
