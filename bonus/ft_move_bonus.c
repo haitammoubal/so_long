@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 02:26:04 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/11 21:57:31 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/01/12 02:45:08 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,5 @@ void	ft_move(t_map *map)
 	(map->moves) += 1;
 	line = ft_itoa(map->moves);
 	mlx_string_put(map->mlx, map->win, 70, 30, 10, line);
+	free(line);
 }

@@ -12,7 +12,7 @@ OFILES := $(CFILES:.c=.o)
 BCFILES := bonus/so_long_bonus.c bonus/ft_putstr_bonus.c bonus/ft_strlen_bonus.c bonus/get_next_line_bonus.c bonus/ft_checkmap_bonus.c bonus/ft_checksize_bonus.c \
 			bonus/ft_search_bonus.c bonus/ft_fill_bonus.c bonus/ft_memcpy_bonus.c bonus/ft_fillmap_bonus.c bonus/ft_init_bonus.c bonus/ft_keyhook_bonus.c bonus/ft_movedown_bonus.c \
 			bonus/ft_moveleft_bonus.c bonus/ft_moveright_bonus.c bonus/ft_moveup_bonus.c bonus/ft_check_collect_bonus.c bonus/get_next_line_utils_bonus.c bonus/ft_move_bonus.c \
-			bonus/ft_init2_bonus.c bonus/ft_itoa_bonus.c
+			bonus/ft_init2_bonus.c bonus/ft_itoa_bonus.c bonus/ft_animation_bonus.c
 
 BOFILES := $(BCFILES:.c=.o)
 

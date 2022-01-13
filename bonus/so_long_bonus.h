@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 23:00:03 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/12 02:14:55 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/01/12 16:48:52 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,5 @@ void	ft_moveup_enemy(t_map *map, int *i, int *j);
 void	ft_moveright_enemy(t_map *map, int *i, int *j);
 void	ft_moveleft_enemy(t_map *map, int *i, int *j);
 void	ft_movedown_enemy(t_map *map, int *i, int *j);
+int		ft_animation(t_map *map, t_srcs *srcs);
 #endif

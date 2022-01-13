@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 22:01:13 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/11 20:41:28 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/01/12 22:42:07 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int	main(int ac, char **av)
 				map.height * 100, "so_long");
 		ft_fillmap(&srcs, &map);
 		mlx_hook(map.win, 2, 0, &key_hook, &map);
+		//mlx_loop_hook(map.mlx, &ft_animation, &map);
 		mlx_hook(map.win, 17, 0, &ft_close, NULL);
 		mlx_loop(map.mlx);
 	}
