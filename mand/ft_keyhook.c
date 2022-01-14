@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 04:07:53 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/11 03:42:32 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/01/14 21:09:15 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_keyhook(t_srcs *srcs, t_map	*map, int i)
 {
 	if (i == 53)
-		exit(1);
+		ft_close(map);
 	else if (i == 13 || i == 126)
 		ft_moveup(srcs, map);
 	else if (i == 1 || i == 125)

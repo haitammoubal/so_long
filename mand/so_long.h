@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 23:00:03 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/12 22:44:50 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/01/14 23:52:18 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ typedef struct s_cont
 	int	collect;
 	int	player;
 	int	exit;
-	int	wall;
 }t_cont;
 
 typedef struct s_srcs
@@ -47,13 +46,14 @@ typedef struct s_srcs
 	void	*coll;
 	void	*exit;
 	void	*land;
+	void	*empty;
 	int		width;
 	int		height;
 }t_srcs;
 
 int		ft_search(char *str, char *little);
-int		ft_checkmap(char *str, t_cont *more);
-int		ft_checksize(char *str, t_map *map);
+int		ft_checkmap(t_map *map, t_cont *more);
+int		ft_checksize(t_map *map);
 int		key_hook(int keycode, t_map *map);
 int		ft_strlen(char *str);
 void	ft_putstr(char *str);
@@ -69,17 +69,28 @@ void	ft_moveright(t_srcs *srcs, t_map	*map);
 void	ft_moveright2(t_map *map, t_srcs *srcs, int *i, int *j);
 void	ft_keyhook(t_srcs *srcs, t_map *map, int i);
 void	ft_fillmap(t_srcs *srcs, t_map *map);
-void	ft_fill(char *str, t_map	*map);
+int		ft_fill(char *str, t_map	*map);
 void	*ft_memcpy(void *dest,	const void *src,	size_t size);
 void	ft_init(t_srcs *srcs, t_map *map);
 int		ft_check_collect(t_map *map);
 char	*ft_strdup(const char *src);
 void	ft_move(t_map *map);
 void	ft_fillmap2(t_map *map, t_srcs *srcs, int x, int y);
-void	ft_init2(t_map *map, t_cont *more);
-void	ft_error(char *line);
-int		ft_check_inside(char **line, t_cont *more);
-int		ft_checkwall(char **line, t_cont *more);
-int		ft_countline(char *str);
-int		ft_check(int j, int fd, char **line, t_cont *more);
+void	ft_init2(t_map *map, t_cont *more, t_srcs *srcs);
+int		ft_check_inside(t_map *map, t_cont *more, int k);
+int		ft_checkwall(t_map *map, int j);
+int		ft_countline(t_map *map);
+int		ft_check(int j, t_map *map, t_cont *more);
+void	ft_fill_size(char *str, t_map *map);
+void	ft_free(t_map *map, int map_height);
+int		ft_checkif(t_map *map, int i, int j);
+void	ft_count(t_map *map, t_cont *more, int i, int j);
+int		ft_so_long(char *str);
+int		ft_close(t_map *map);
+void	ft_clear(t_map *map, t_srcs *srcs);
+int		ft_ber(char *str);
+void	ft_create_win(t_map *map);
+void	ft_fill_null(t_srcs *srcs, t_map *map);
+void	ft_next(t_map *map, t_srcs *srcs);
+int		ft_ifchecks(char *str, t_map *map, t_cont *more);
 #endif

@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 03:35:01 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/11 04:15:30 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/01/14 19:45:40 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,13 @@ void	ft_moveleft2(t_map *map, t_srcs *srcs, int *i, int *j)
 	{
 		map->map[*i][*j - 1] = 'P';
 		map->map[*i][*j] = '0';
-		ft_fillmap(srcs, map);
-		ft_move(map);
+		ft_next(map, srcs);
 	}
 	else if (map->map[*i][*j - 1] == 'C')
 	{
 		map->map[*i][*j - 1] = 'P';
 		map->map[*i][*j] = '0';
-		ft_fillmap(srcs, map);
-		ft_move(map);
+		ft_next(map, srcs);
 	}
 	else if (map->map[*i][*j - 1] == 'E')
 	{
@@ -34,7 +32,7 @@ void	ft_moveleft2(t_map *map, t_srcs *srcs, int *i, int *j)
 		{
 			ft_move(map);
 			ft_putstr("YOU WIN");
-			exit(1);
+			ft_close(map);
 		}
 	}
 	return ;

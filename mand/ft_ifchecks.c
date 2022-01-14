@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init2_bonus.c                                   :+:      :+:    :+:   */
+/*   ft_ifchecks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/11 05:05:54 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/14 23:57:06 by hmoubal          ###   ########.fr       */
+/*   Created: 2022/01/14 23:50:50 by hmoubal           #+#    #+#             */
+/*   Updated: 2022/01/14 23:52:01 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long_bonus.h"
+#include "so_long.h"
 
-void	ft_init2(t_map *map, t_cont *more, t_srcs *srcs)
+int	ft_ifchecks(char *str, t_map *map, t_cont *more)
 {
-	map->moves = 0;
-	map->i = 0;
-	map->k = 0;
-	map->j = 0;
-	more->collect = 0;
-	more->exit = 0;
-	more->player = 0;
-	map->width = 0;
-	map->height = 0;
-	srcs->empty = NULL;
-	return ;
+	if (ft_fill(str, map) == 0)
+	{
+		ft_close(map);
+		return (0);
+	}
+	if (ft_checksize(map) == 0)
+	{
+		ft_close(map);
+		return (0);
+	}
+	if (ft_checkmap(map, more) == 0)
+	{
+		ft_close(&map);
+		return (0);
+	}
+	return (1);
 }

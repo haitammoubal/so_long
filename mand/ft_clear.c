@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init2_bonus.c                                   :+:      :+:    :+:   */
+/*   ft_clear.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/11 05:05:54 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/14 23:57:06 by hmoubal          ###   ########.fr       */
+/*   Created: 2022/01/14 19:04:48 by hmoubal           #+#    #+#             */
+/*   Updated: 2022/01/14 19:28:56 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long_bonus.h"
+#include "so_long.h"
 
-void	ft_init2(t_map *map, t_cont *more, t_srcs *srcs)
+int	ft_ber(char *str)
 {
-	map->moves = 0;
-	map->i = 0;
-	map->k = 0;
-	map->j = 0;
-	more->collect = 0;
-	more->exit = 0;
-	more->player = 0;
-	map->width = 0;
-	map->height = 0;
-	srcs->empty = NULL;
-	return ;
+	if (ft_search(str, ".ber") == 0)
+	{
+		ft_putstr("map extansion is not .ber");
+		return (0);
+	}
+	return (1);
+}
+
+void	ft_clear(t_map *map, t_srcs *srcs)
+{
+	mlx_clear_window(map->mlx, map->win);
+	ft_fill_null(srcs, map);
 }
