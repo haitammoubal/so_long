@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 23:00:03 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/15 04:05:35 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/01/15 19:18:02 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ typedef struct s_srcs
 
 int		ft_search(char *str, char *little);
 int		ft_checkmap(t_map *map, t_cont *more);
-int		ft_checksize(t_map *map);
+int		ft_checksize(char *str, t_map *map);
 int		key_hook(int keycode, t_map *map);
 int		ft_strlen(char *str);
 void	ft_putstr(char *str);
@@ -101,4 +101,5 @@ void	ft_fill_null(t_srcs *srcs, t_map *map);
 int		ft_close(t_map *map);
 void	ft_next(t_map *map, t_srcs *srcs);
 void	ft_error(int width, int height, t_map *map);
+int		ft_ifchecks(char *str, t_map *map, t_cont *more);
 #endif

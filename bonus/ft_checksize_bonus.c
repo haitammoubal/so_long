@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 19:35:22 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/14 18:10:20 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/01/15 19:19:09 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,23 +64,33 @@ void	ft_fill_size(char *str, t_map *map)
 	}
 }
 
-int	ft_checksize(t_map *map)
+int	ft_checksize(char *str, t_map *map)
 {
-	int	i;
-	int	j;
+	int		fd;
+	char	*line;
+	int		i;
 
 	i = 0;
-	while (map->map[i] != NULL)
+	fd = open(str, O_RDWR);
+	if (fd < 0)
 	{
-		j = 0;
-		while (map->map[i][j] != '\0')
-			j++;
-		if (j != map->width)
+		ft_putstr("file unreadable");
+		exit(0);
+	}
+	line = get_next_line(fd);
+	while (line)
+	{
+		i = 0;
+		while (line[i] != '\0')
+			i++;
+		if (i != map->width)
 		{
 			ft_putstr("invalid map");
 			return (0);
 		}
-		i++;
+		free(line);
+		line = get_next_line(fd);
 	}
+	close(fd);
 	return (1);
 }

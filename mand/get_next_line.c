@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 17:39:36 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/09 20:09:13 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/01/15 18:53:11 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,6 @@ char	*get_next_line(int fd)
 		if (get_line(rem) != -1)
 			break ;
 	}
-	return (free_all(&buff), fill_line(&rem, i));
+	free_all(&buff);
+	return (fill_line(&rem, i));
 }
