@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 19:04:48 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/14 19:28:56 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/01/15 01:00:40 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ int	ft_ber(char *str)
 	return (1);
 }
 
-void	ft_clear(t_map *map, t_srcs *srcs)
+void	ft_clear(t_map *map)
 {
 	mlx_clear_window(map->mlx, map->win);
-	ft_fill_null(srcs, map);
 }

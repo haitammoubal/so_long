@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 22:01:13 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/14 23:52:51 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/01/15 03:56:45 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,30 +41,32 @@ int	ft_close(t_map *map)
 	return (0);
 }
 
-int	ft_so_long(char *str)
+int	ft_so_long(t_map *map)
 {
-	t_cont	more;
-	t_map	map;
-	t_srcs	srcs;
-
-	if (ft_ber(str) == 0)
-		return (0);
-	ft_init2(&map, &more, &srcs);
-	ft_fill_size(str, &map);
-	if (ft_ifchecks(str, &map, &more) == 0)
-		return (0);
-	ft_create_win(&map);
-	ft_fillmap(&srcs, &map);
-	mlx_hook(map.win, 2, 0, &key_hook, &map);
-	mlx_hook(map.win, 17, 0, &ft_close, &map);
-	mlx_loop(map.mlx);
+	mlx_hook(map->win, 2, 0, &key_hook, map);
+	mlx_hook(map->win, 17, 0, &ft_close, map);
+	mlx_loop(map->mlx);
 	return (0);
 }
 
 int	main(int ac, char **av)
 {
+	t_cont	more;
+	t_map	map;
+	t_srcs	srcs;
+
 	if (ac == 2)
-		ft_so_long(av[1]);
+	{
+		if (ft_ber(av[1]) == 0)
+			return (0);
+		ft_init2(&map, &more);
+		ft_fill_size(av[1], &map);
+		if (ft_ifchecks(av[1], &map, &more) == 0)
+			return (0);
+		ft_create_win(&map);
+		ft_fillmap(&srcs, &map);
+		ft_so_long(&map);
+	}
 	else
 		ft_putstr("error syntaxe\n");
 	return (0);

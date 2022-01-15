@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 22:01:13 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/15 00:42:03 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/01/15 03:58:31 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,7 @@ int	ft_so_long(t_map *map, t_srcs *srcs)
 	ft_create_win(map);
 	ft_init(srcs, map);
 	ft_fillmap(srcs, map);
-	// (void)srcs;
 	mlx_hook(map->win, 2, 0, &key_hook, map);
-	//mlx_loop_hook(map->mlx, &ft_animation, map);
 	mlx_hook(map->win, 17, 0, &ft_close, NULL);
 	mlx_loop(map->mlx);
 	return (0);
@@ -64,7 +62,7 @@ int	main(int ac, char **av)
 	{
 		if (ft_ber(av[1]) == 0)
 			return (0);
-		ft_init2(&map, &more, &srcs);
+		ft_init2(&map, &more);
 		ft_fill_size(av[1], &map);
 		if (ft_fill(av[1], &map) == 0)
 			return (0);
@@ -72,9 +70,6 @@ int	main(int ac, char **av)
 			return (0);
 		if (ft_checkmap(&map, &more) == 0)
 			return (0);
-		// ft_create_win(&map);
-		// ft_init(&srcs, &map);
-		// ft_fillmap(&srcs, &map);
 		ft_so_long(&map, &srcs);
 	}
 	else
