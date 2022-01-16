@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 22:01:13 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/15 23:59:58 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/01/16 14:56:53 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,7 @@ void	ft_free(t_map *map, int map_height)
 
 int	key_hook(int keycode, t_map *map)
 {
-	t_srcs	srcs;
-
-	ft_init(&srcs, map);
-	ft_keyhook(&srcs, map, keycode);
+	ft_keyhook(map, keycode);
 	return (0);
 }
 
@@ -41,11 +38,11 @@ int	ft_close(t_map *map)
 	return (0);
 }
 
-int	ft_so_long(t_map *map, t_srcs *srcs)
+int	ft_so_long(t_map *map)
 {
 	ft_create_win(map);
-	ft_init(srcs, map);
-	ft_fillmap(srcs, map);
+	ft_init(map);
+	ft_fillmap(map);
 	mlx_hook(map->win, 2, 0, &key_hook, map);
 	mlx_hook(map->win, 17, 0, &ft_close, NULL);
 	mlx_loop(map->mlx);
@@ -56,7 +53,6 @@ int	main(int ac, char **av)
 {
 	t_cont	more;
 	t_map	map;
-	t_srcs	srcs;
 
 	if (ac == 2)
 	{
@@ -70,7 +66,7 @@ int	main(int ac, char **av)
 			return (0);
 		if (ft_checkmap(&map, &more) == 0)
 			return (0);
-		ft_so_long(&map, &srcs);
+		ft_so_long(&map);
 	}
 	else
 		ft_putstr("error syntaxe\n");

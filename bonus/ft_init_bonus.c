@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 21:14:56 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/15 04:06:09 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/01/16 14:47:55 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,24 @@ void	ft_error(int width, int height, t_map *map)
 	}
 }
 
-void	ft_init(t_srcs *srcs, t_map *map)
+void	ft_init(t_map *map)
 {
-	srcs->block = mlx_xpm_file_to_image(map->mlx, "srcs/block.xpm",
-			&(srcs->width), &(srcs->height));
-	ft_error(srcs->width, srcs->height, map);
-	srcs->coll = mlx_xpm_file_to_image(map->mlx, "srcs/food.xpm",
-			&(srcs->width), &(srcs->height));
-	ft_error(srcs->width, srcs->height, map);
-	srcs->player = mlx_xpm_file_to_image(map->mlx, "srcs/player.xpm",
-			&(srcs->width), &(srcs->height));
-	ft_error(srcs->width, srcs->height, map);
-	srcs->exit = mlx_xpm_file_to_image(map->mlx, "srcs/exit.xpm",
-			&(srcs->width), &(srcs->height));
-	ft_error(srcs->width, srcs->height, map);
-	srcs->land = mlx_xpm_file_to_image(map->mlx, "srcs/land.xpm",
-			&(srcs->width), &(srcs->height));
-	ft_error(srcs->width, srcs->height, map);
-	srcs->enemy = mlx_xpm_file_to_image(map->mlx, "srcs/enemy.xpm",
-			&(srcs->width), &(srcs->height));
-	ft_error(srcs->width, srcs->height, map);
+	map->block = mlx_xpm_file_to_image(map->mlx, "srcs/block.xpm",
+			&(map->img_width), &(map->img_height));
+	ft_error(map->img_width, map->img_height, map);
+	map->coll = mlx_xpm_file_to_image(map->mlx, "srcs/food.xpm",
+			&(map->img_width), &(map->img_height));
+	ft_error(map->img_width, map->img_height, map);
+	map->player = mlx_xpm_file_to_image(map->mlx, "srcs/player.xpm",
+			&(map->img_width), &(map->img_height));
+	ft_error(map->img_width, map->img_height, map);
+	map->exit = mlx_xpm_file_to_image(map->mlx, "srcs/exit.xpm",
+			&(map->img_width), &(map->img_height));
+	ft_error(map->img_width, map->img_height, map);
+	map->land = mlx_xpm_file_to_image(map->mlx, "srcs/land.xpm",
+			&(map->img_width), &(map->img_height));
+	ft_error(map->img_width, map->img_height, map);
+	map->enemy = mlx_xpm_file_to_image(map->mlx, "srcs/enemy.xpm",
+			&(map->img_width), &(map->img_height));
+	ft_error(map->img_width, map->img_height, map);
 }
