@@ -6,11 +6,17 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 19:04:48 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/15 00:48:21 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/01/16 20:51:23 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
+
+void	ft_file(void)
+{
+	ft_putstr("file unreadable");
+	exit(0);
+}
 
 int	ft_ber(char *str)
 {

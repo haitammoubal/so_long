@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 23:00:03 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/16 14:41:08 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/01/16 20:51:29 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,4 +97,5 @@ int		ft_close(t_map *map);
 void	ft_next(t_map *map);
 void	ft_error(int width, int height, t_map *map);
 int		ft_ifchecks(char *str, t_map *map, t_cont *more);
+void	ft_file(void);
 #endif
