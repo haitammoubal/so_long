@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 19:35:22 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/15 19:19:09 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/01/15 19:33:49 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	ft_checksize(char *str, t_map *map)
 	while (line)
 	{
 		i = 0;
-		while (line[i] != '\0')
+		while (line[i] != '\0' && line[i] != '\n')
 			i++;
 		if (i != map->width)
 		{

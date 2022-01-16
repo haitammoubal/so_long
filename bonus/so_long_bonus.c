@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 22:01:13 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/15 03:58:31 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/01/15 23:59:58 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	main(int ac, char **av)
 		ft_fill_size(av[1], &map);
 		if (ft_fill(av[1], &map) == 0)
 			return (0);
-		if (ft_checksize(&map) == 0)
+		if (ft_checksize(av[1], &map) == 0)
 			return (0);
 		if (ft_checkmap(&map, &more) == 0)
 			return (0);

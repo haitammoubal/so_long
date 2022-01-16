@@ -6,16 +6,16 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 02:26:04 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/15 01:01:05 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/01/16 00:29:58 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_next(t_map *map, t_srcs *srcs)
+void	ft_next(t_map *map)
 {
 	ft_clear(map);
-	ft_fillmap(srcs, map);
+	ft_fillmap(map);
 	ft_move(map);
 }
 
