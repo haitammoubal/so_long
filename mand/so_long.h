@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 23:00:03 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/16 21:43:16 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/01/21 01:42:02 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <mlx.h>
 # include <stdio.h>
 # include <unistd.h>
-# include <string.h>
 # include <stdlib.h>
 # include <fcntl.h>
 
