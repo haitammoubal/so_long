@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 03:06:44 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/15 19:07:44 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/02/06 16:56:47 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,7 @@ int	ft_fill(char *str, t_map	*map)
 
 	fd = open(str, O_RDWR);
 	if (fd < 0)
-	{
-		ft_putstr("file unreadable");
-		exit(0);
-	}
+		ft_file();
 	i = 0;
 	map->map = (char **)malloc(sizeof(char *) * (map->height + 1));
 	if (map->map == NULL)

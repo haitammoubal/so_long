@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 22:01:13 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/02/06 16:34:07 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/02/06 17:08:10 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	key_hook(int keycode, t_map *map)
 int	ft_close(t_map *map)
 {
 	ft_free(map, map->height);
-	exit(1);
+	exit(0);
 	return (0);
 }
 
@@ -61,11 +61,7 @@ int	main(int ac, char **av)
 			return (0);
 		ft_init2(&map, &more);
 		ft_fill_size(av[1], &map);
-		if (ft_fill(av[1], &map) == 0)
-			return (0);
-		if (ft_checksize(av[1], &map) == 0)
-			return (0);
-		if (ft_checkmap(&map, &more) == 0)
+		if (ft_ifchecks(av[1], &map, &more) == 0)
 			return (0);
 		ft_so_long(&map);
 	}

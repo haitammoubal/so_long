@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 19:35:22 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/16 20:51:05 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/02/06 17:03:21 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,7 @@ void	ft_fill_size(char *str, t_map *map)
 	t = 0;
 	fd = open(str, O_RDWR);
 	if (fd < 0)
-	{
-		ft_putstr("file unreadable");
-		exit(0);
-	}
+		ft_file();
 	line = get_next_line(fd);
 	while (line)
 	{

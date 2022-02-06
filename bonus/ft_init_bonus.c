@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 21:14:56 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/16 14:47:55 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/02/06 17:07:08 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_error(int width, int height, t_map *map)
 	if (width == 0 || height == 0)
 	{
 		printf("error img");
-		ft_close(map);
+		ft_close_error(map);
 	}
 }
 
