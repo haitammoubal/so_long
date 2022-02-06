@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/26 23:00:03 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/21 01:42:20 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/02/06 16:33:31 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int		ft_checkif(t_map *map, int j, int i);
 void	ft_fill2(t_map *map, t_cont *more, int j, int i);
 void	ft_free(t_map *map, int map_height);
 int		ft_so_long(t_map *map);
-void	ft_create_win(t_map *map);
+int		ft_create_win(t_map *map);
 void	ft_clear(t_map *map);
 int		ft_ber(char *str);
 int		ft_close(t_map *map);

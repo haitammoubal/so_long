@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 22:01:13 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/16 00:40:35 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/02/06 16:32:19 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ int	main(int ac, char **av)
 		ft_fill_size(av[1], &map);
 		if (ft_ifchecks(av[1], &map, &more) == 0)
 			return (0);
-		ft_create_win(&map);
+		if (ft_create_win(&map) == 1)
+			return (ft_putstr("mlx error"), 0);
 		ft_init(&map);
 		ft_fillmap(&map);
 		ft_so_long(&map);

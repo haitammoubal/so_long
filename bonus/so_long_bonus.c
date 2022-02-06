@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 22:01:13 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/01/16 14:56:53 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/02/06 16:34:07 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ int	ft_close(t_map *map)
 
 int	ft_so_long(t_map *map)
 {
-	ft_create_win(map);
+	if (ft_create_win(map) == 1)
+		return (ft_putstr("mlx error"), 0);
 	ft_init(map);
 	ft_fillmap(map);
 	mlx_hook(map->win, 2, 0, &key_hook, map);
