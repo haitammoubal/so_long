@@ -22,17 +22,21 @@ BINC := bonus/so_long_bonus.h
 
 NAME := so_long
 
+BNAME := so_long_bonus
+
 $(NAME) : $(OFILES) $(INC)
 	@$(CC) $(FLAGS) $(CFILES) $(LINKS) -o $(NAME)
 
-bonus : $(BOFILES) $(BINC)
-	@$(CC) $(FLAGS) $(BCFILES) $(LINKS) -o $(NAME)
+bonus : $(BNAME)
+
+$(BNAME) : $(BOFILES) $(BINC)
+	@$(CC) $(FLAGS) $(BCFILES) $(LINKS) -o $(BNAME)
 
 all : $(NAME)
 clean :
 	@rm -rf $(OFILES) $(BOFILES)
 fclean : clean
-	@rm -rf $(NAME)
+	@rm -rf $(NAME) $(BNAME)
 
 re : fclean all
 
